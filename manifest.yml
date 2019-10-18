@@ -4,7 +4,7 @@ declared-services:
     plan: Lite
   iot-phone-iotf-service:
     label: iotf-service
-    plan: Lite
+    plan: iotf-service-free
 
 applications:
 - services:
