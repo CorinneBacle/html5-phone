@@ -72,7 +72,7 @@
 
 	function getId() {
 
-		window.deviceId = prompt("Enter a unique ID of at least 8 characters containing only letters and numbers:");
+		window.deviceId = prompt("Enter a unique ID of at least 8 characters containing only letters and numbers (Warning : it will be displayed on the dashboard!):");
 		if (deviceIdRegEx.test(window.deviceId) === true) {
 			console.log("Connecting with device id: " + window.deviceId);
 			$("#deviceId").html(window.deviceId);
