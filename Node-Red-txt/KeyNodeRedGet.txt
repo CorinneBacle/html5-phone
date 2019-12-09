@@ -1,0 +1,24 @@
+Generated Details
+
+API Key a-ff0h6y-hxf19xfvbr
+Authentication Token e2udElMZ+XepxUvk6u
+
+Make a note of the generated authentication token. Lost authentication tokens cannot be recovered. If you lose the token, you must reregister the API to generate a new token.
+API Key Information
+
+Description
+ApiKeyNodeRedGet
+Role
+Operations Application
+Expires
+Never
+
+
+id: "5c3caab8c5d1250028de0b6b"
+schemaId: "5c3caab7c5d1250028de0b6a"
+refs: object
+schema: "/api/v0002/schemas/5c3caab7c5d1250028de0b6a"
+rules: "/api/v0002/logicalinterfaces/5c3caab8c5d1250028de0b6b/rules"
+
+
+schemaId: "5c3caab7c5d1250028de0b6a"
