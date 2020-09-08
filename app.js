@@ -66,7 +66,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var device_credentials = null;
 var dbName = 'device_credentials';
-Cloudant({account:db_props.username, password:db_props.password}, function(err, cloudant) {
+Cloudant({vcapServices: JSON.parse(process.env.VCAP_SERVICES)}, function(err, cloudant) {
+	if (err) {
+	    return console.log('Failed to initialize Cloudant: ' + err.message);
+    	}
+
 	console.log('Connected to Cloudant')
 
 	cloudant.db.list(function(err, all_dbs) {
