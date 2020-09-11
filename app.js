@@ -76,16 +76,21 @@ Cloudant({vcapServices: JSON.parse(process.env.VCAP_SERVICES)}, function(err, cl
 	cloudant.db.list(function(err, all_dbs) {
 	   if (all_dbs.indexOf(dbName) < 0) {
 	      // first time -- need to create the iotzone-devices database
-	      cloudant.db.create(dbName, function() {
-		device_credentials = cloudant.use(dbName);
-		console.log("created DB " + dbName);
-	      });
+	      cloudant.db.create(dbName,(err) => {
+             if (err) {
+                console.log(err);
+              } else {
+        		device_credentials = cloudant.use(dbName);
+        		console.log("created DB " + dbName);
+                 }
+          });
 	    } else {
 	      console.log("found DB " + dbName);
 	      device_credentials = cloudant.use(dbName);
 	    }
 	})
 })
+
 
 app.get('/credentials/:deviceId', function(req, res) {
 	var deviceId = req.params.deviceId;
